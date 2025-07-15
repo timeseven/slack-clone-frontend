@@ -1,0 +1,181 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+html,
+body,
+:root {
+  height: 100%;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Primary and secondary actions */
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  /* Accent and muted states */
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  /* Destructive actions */
+  --color-destructive: var(--destructive);
+
+  /* Card / Popover */
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  /* Form/input feedback */
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Charts */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Success */
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Base */
+  --background: oklch(0.99 0.005 270);
+  --foreground: oklch(0.15 0.01 270);
+
+  /* Card / Popover */
+  --card: oklch(1 0 0); /* White */
+  --card-foreground: oklch(0.18 0.01 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.01 260);
+
+  /* Primary (Slack Deep Purple) */
+  --primary: oklch(0.32 0.25 337); 
+  --primary-foreground: oklch(0.98 0.01 337);
+
+  /* Secondary (Slack Yellow) */
+  --secondary: oklch(0.95 0.01 270); 
+  --secondary-foreground: oklch(0.25 0.01 270);
+
+  /* Accent  */
+  --accent: oklch(0.97 0.005 180); 
+  --accent-foreground: oklch(0.25 0.01 180);
+
+  /* Success */
+  --success: oklch(0.6615 0.1697 151.86);
+  --success-foreground: oklch(0.98 0.01 151.86);
+
+  /* Destructive  */
+  --destructive: oklch(0.5982 0.2046 18.21);
+  --destructive-foreground: oklch(0.98 0.01 18.21);
+
+  /* Muted */
+  --muted: oklch(0.93 0.005 270);
+  --muted-foreground: oklch(0.5 0.01 270);
+
+  /* Border / Input / Ring */
+  --border: oklch(0.88 0.01 270);
+  --input: oklch(0.88 0.01 270);
+  --ring: var(--primary);
+
+  /* Chart palette */
+  --chart-1: oklch(0.6 0.18 40);
+  --chart-2: oklch(0.6 0.18 160);
+  --chart-3: oklch(0.6 0.18 240);
+  --chart-4: oklch(0.6 0.18 320);
+  --chart-5: oklch(0.6 0.18 20);
+}
+
+
+
+.dark {
+  --radius: 0.5rem;
+
+  /* Base */
+  --background: oklch(0.12 0.005 270);
+  --foreground: oklch(0.97 0.01 270);
+
+  /* Card / Popover */
+  --card: oklch(0.16 0.005 270);
+  --card-foreground: oklch(0.97 0.01 270);
+  --popover: oklch(0.16 0.005 270);
+  --popover-foreground: oklch(0.97 0.01 270);
+
+  /* Primary */
+  --primary: oklch(0.7 0.18 340); 
+  --primary-foreground: oklch(0.15 0.01 340); 
+
+  /* Secondary */
+  --secondary: oklch(0.7 0.18 85); 
+  --secondary-foreground: oklch(0.15 0.03 85); 
+
+  /* Muted */
+  --muted: oklch(0.25 0.01 270);
+  --muted-foreground: oklch(0.6 0.01 270);
+
+  /* Accent */
+  --accent: oklch(0.75 0.18 220);
+  --accent-foreground: oklch(0.12 0.01 220);
+
+  /* Destructive */
+  --destructive: oklch(0.65 0.22 10);
+  --destructive-foreground: oklch(0.15 0.01 10);
+
+  /* Border/Input/Ring */
+  --border: oklch(0.25 0.01 270);
+  --input: oklch(0.25 0.01 270);
+  --ring: var(--primary);
+
+  /* Chart colors */
+  --chart-1: oklch(0.75 0.22 40);
+  --chart-2: oklch(0.7 0.14 200);
+  --chart-3: oklch(0.6 0.08 270);
+  --chart-4: oklch(0.9 0.18 100);
+  --chart-5: oklch(0.8 0.17 60);
+
+  /* Success */
+  --success: oklch(0.65 0.18 145);
+  --success-foreground: oklch(0.12 0.01 145);
+}
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button:not([disabled]),
+	[role="button"]:not([disabled]) {
+	  cursor: pointer;
+	}
+}
+
+/* Import all custom styles here */
+@import "./loading.css";
+@import "./quill.css"
