@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Slack Clone Frontend with Next.js
 
-## Getting Started
+This is a modular, desktop-focused frontend built with Next.js. It supports real-time chat, workspace navigation, image/file upload, and global state management. The project is styled with Tailwind CSS and built with modern React tooling.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🛠 Tech Stack
+
+- **TypeScript** – Strongly typed language for building scalable and maintainable code
+- **Next.js** – React-based framework for building fast web apps
+- **Tailwind CSS** – Utility-first CSS framework for rapid UI development
+- **Shadcn UI** – Component library built on Radix UI + Tailwind
+- **React Query** – Data fetching, caching, and syncing
+- **Zustand** – Global state management with a minimal API
+- **Socket.IO** – Real-time bidirectional communication
+- **Bun** – Ultra-fast JavaScript/TypeScript runtime and package manager
+- **ESLint + Husky** – Code quality and Git hook enforcement
+
+## 🚀 Features
+
+- 💬 **Real-Time Chat with Socket.IO**
+  - Connects to FastAPI backend using WebSocket
+  - Supports user, workspace, and channel rooms for real-time updates
+  - Broadcasts messages, notifications, typing events
+
+- 🖼 **Avatar & Logo Upload**
+  - Users can upload their profile avatar
+  - Workspaces support custom logo uploads
+  - Uploads stored in S3 and rendered with public access URLs
+
+- 📎 **(Coming Soon) Chat Image/File Upload**
+  - Inline file/image message support to be added
+  - Upload progress and preview pipeline planned
+
+- 🧠 **Data & State Management**
+  - React Query for async API communication
+  - Zustand for lightweight global state (auth, UI state, socket)
+  - Centralized query keys and API client structure
+
+
+## ⚙️ Getting Started
+
+### 1. Set up environment variables
+Rename .env.dev to .env
+
+### 2. Install Bun
+Bun is used as the runtime, package manager, and script runner.
+
+### 3. Install depencencies and run the project
+```
+bun install
+bun run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📄 License
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details
