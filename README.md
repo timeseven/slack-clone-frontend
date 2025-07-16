@@ -1,6 +1,6 @@
 # Slack Clone Frontend with Next.js
 
-This is a modular, desktop-focused frontend built with Next.js. It supports real-time chat, workspace navigation, image/file upload, and global state management. The project is styled with Tailwind CSS and built with modern React tooling.
+This is a modular, web-focused frontend built with Next.js. It supports real-time chat, workspace navigation, image/file upload, and global state management. The project is styled with Tailwind CSS and built with modern React tooling.
 
 ---
 
